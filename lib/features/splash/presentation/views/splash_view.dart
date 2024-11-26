@@ -10,6 +10,7 @@ class SplashView
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SplashViewBody(),
+      
     );
   }
 }

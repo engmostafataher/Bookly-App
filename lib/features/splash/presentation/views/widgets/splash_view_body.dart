@@ -12,7 +12,9 @@ class SplashViewBody
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo)
+        Image.asset(AssetsData.logo),
+        const SizedBox(height: 4),
+        const Text(textAlign: TextAlign.center,'Reed Free Books')
       ],
     );
   }

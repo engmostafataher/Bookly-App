@@ -7,9 +7,9 @@ class CustomListViewItme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .3,
-      child: AspectRatio(
+    return 
+      
+       AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Container(
           height: 100,
@@ -23,7 +23,7 @@ class CustomListViewItme extends StatelessWidget {
                     AssetsData.testImage,
                   ))),
         ),
-      ),
+      
     );
   }
 }

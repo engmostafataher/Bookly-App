@@ -1,6 +1,10 @@
+import 'package:buckley_app/constants.dart';
 import 'package:buckley_app/core/utils/assets.dart';
+import 'package:buckley_app/features/home/presentation/views/home_view.dart';
 import 'package:buckley_app/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -17,16 +21,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 5));
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
-            .animate(animationController);
-    // slidingAnimation.addListener(() {
-    //   setState(() {});
-    // });
-    animationController.forward();
+    initSlidingAnimation();
+    navigateToHome();
   }
+
+
 
   @override
   void dispose() {
@@ -45,5 +44,25 @@ class _SplashViewBodyState extends State<SplashViewBody>
         SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
+  }
+
+
+  
+    void navigateToHome() {
+      Future.delayed(const Duration(seconds: 3), () {
+      Get.to(()=>const HomeView(),transition:Transition.fade,duration: kTranstionDuration);
+    });
+  }
+
+  void initSlidingAnimation() {
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 10), end: Offset.zero)
+            .animate(animationController);
+    // slidingAnimation.addListener(() {
+    //   setState(() {});
+    // });
+    animationController.forward();
   }
 }

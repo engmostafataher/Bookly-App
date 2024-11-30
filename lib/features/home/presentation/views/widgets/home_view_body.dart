@@ -1,5 +1,7 @@
+import 'package:buckley_app/core/utils/styels.dart';
+import 'package:buckley_app/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:buckley_app/features/home/presentation/views/widgets/custom_appbar.dart';
-import 'package:buckley_app/features/home/presentation/views/widgets/custom_list_view_itme.dart';
+import 'package:buckley_app/features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -7,31 +9,37 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        CustomAppBar(),
-        FeaturedBooksListView(),
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: CustomAppBar(),
+              ),
+              FeaturedBooksListView(),
+              SizedBox(height: 50),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Best Seller',
+                  style: Styels.textStyle18,
+                ),
+              ),
+              SizedBox(height: 20),
+            
+            ],
+          ),
+        ),
+        SliverFillRemaining(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: BestSellerListView(),
+          ),
+        )
       ],
-    );
-  }
-}
-
-class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.sizeOf(context).height * .3,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: (context, index) {
-        return const Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 8),
-          child:  CustomListViewItme(),
-        );
-      }),
     );
   }
 }

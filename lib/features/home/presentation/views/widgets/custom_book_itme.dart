@@ -2,8 +2,8 @@
 import 'package:buckley_app/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class CustomListViewItme extends StatelessWidget {
-  const CustomListViewItme({super.key});
+class CustomBookItme extends StatelessWidget {
+  const CustomBookItme({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,21 +8,21 @@ class BooksAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 8),
-      child:  Row(
+      child: Row(
         children: [
           Expanded(
               child: CustomButton(
-                text: '19.99 €',
+            text: '19.99 €',
             backgroundColor: Colors.white,
             textColor: Colors.black,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(16),
               bottomLeft: Radius.circular(16),
             ),
-          )), 
-           Expanded(
+          )),
+          Expanded(
               child: CustomButton(
-                text: 'Free preview',
+            text: 'Free preview',
             backgroundColor: Color(0xFFEF8262),
             textColor: Colors.white,
             borderRadius: BorderRadius.only(

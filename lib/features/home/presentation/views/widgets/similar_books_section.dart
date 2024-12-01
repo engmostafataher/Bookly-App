@@ -1,4 +1,3 @@
-
 import 'package:buckley_app/core/utils/styels.dart';
 import 'package:buckley_app/features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
